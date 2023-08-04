@@ -663,7 +663,7 @@
 
                   <div>
 						   <label for="contactName">Name:<span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactName" name="Name">
+						   <input type="text" rows="1" id="contactName" name="Name">
                   </div> 
 
                   <div>
@@ -690,25 +690,25 @@
                               /* customize formbutton below*/     
                               formbutton("create", {
                                  action: "https://formspree.io/f/mnqkjrwa",
-                                 title: "contactForm",
+                                 title: "Form",
                                  fields: [
                                     { 
                                        type: "textarea",
-                                       label: "contactName",
-                                       name: "contactName",
+                                       label: "Name",
+                                       name: "contactName",                                
                                        required: true,
                                        placeholder: "What's your name?",
                                     },
                                     { 
                                     type: "email", 
-                                    label: "contactEmail", 
+                                    label: "Email", 
                                     name: "contactEmail",
                                     required: true,
                                     placeholder: "your@email.com"
                                     },
                                     {
                                     type: "textarea",
-                                    label: "contactMessage",
+                                    label: "Message",
                                     name: "contactMessage",
                                     required: true,
                                     placeholder: "What's up?",
