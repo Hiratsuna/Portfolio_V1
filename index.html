@@ -11,77 +11,7 @@
    <link rel="stylesheet" href="css/media-queries.css">
    <link rel="stylesheet" href="css/magnific-popup.css">
    <script src="https://kit.fontawesome.com/f00352b4aa.js" crossorigin="anonymous"></script>
-   <link rel="php" href="inc/sendEmail.php">
-   <?php
-
-   // Replace this with your own email address
-   $siteOwnersEmail = 'gerganazhekova@outlook.com';
-   
-   
-   if($_POST) {
-   
-      $name = trim(stripslashes($_POST['contactName']));
-      $email = trim(stripslashes($_POST['contactEmail']));
-      $subject = trim(stripslashes($_POST['contactSubject']));
-      $contact_message = trim(stripslashes($_POST['contactMessage']));
-   
-      // Check Name
-      if (strlen($name) < 2) {
-         $error['name'] = "Please enter your name.";
-      }
-      // Check Email
-      if (!preg_match('/^[a-z0-9&\'\.\-_\+]+@[a-z0-9\-]+\.([a-z0-9\-]+\.)*+[a-z]{2}/is', $email)) {
-         $error['email'] = "Please enter a valid email address.";
-      }
-      // Check Message
-      if (strlen($contact_message) < 15) {
-         $error['message'] = "Please enter your message. It should have at least 15 characters.";
-      }
-      // Subject
-      if ($subject == '') { $subject = "Contact Form Submission"; }
-   
-   
-      // Set Message
-      $message .= "Email from: " . $name . "<br />";
-      $message .= "Email address: " . $email . "<br />";
-      $message .= "Message: <br />";
-      $message .= $contact_message;
-      $message .= "<br /> ----- <br /> This email was sent from your site's contact form. <br />";
-   
-      // Set From: header
-      $from =  $name . " <" . $email . ">";
-   
-      // Email Headers
-      $headers = "From: " . $from . "\r\n";
-      $headers .= "Reply-To: ". $email . "\r\n";
-       $headers .= "MIME-Version: 1.0\r\n";
-      $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-   
-   
-      if (!$error) {
-   
-         ini_set("sendmail_from", $siteOwnersEmail); // for windows server
-         $mail = mail($siteOwnersEmail, $subject, $message, $headers);
-   
-         if ($mail) { echo "OK"; }
-         else { echo "Something went wrong. Please try again."; }
-         
-      } # end if - no validation error
-   
-      else {
-   
-         $response = (isset($error['name'])) ? $error['name'] . "<br /> \n" : null;
-         $response .= (isset($error['email'])) ? $error['email'] . "<br /> \n" : null;
-         $response .= (isset($error['message'])) ? $error['message'] . "<br />" : null;
-         
-         echo $response;
-   
-      } # end if - there was a validation error
-   
-   }
-   
-   ?>
- 
+   <link rel="formspree.json">
 	<script src="js/modernizr.js"></script>
 
   
@@ -112,8 +42,8 @@
       <div class="row banner">
          <div class="banner-text">
             <h1 class="responsive-headline">I'm Jerry.</h1>
-            <h3>I'm a <span>twitch streamer</span>, <span>wannabe programmer</span> and <span>internet troll </span> creating memes and abominations. Let's <a class="smoothscroll" href="#about">start trolling</a>
-            and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
+            <h3>I'm a <span>twitch streamer</span>, <span>curious soul</span> and <span></span> a casual nerd. Let's <a class="smoothscroll" href="#about">find out a little bit more</a>
+             <a class="smoothscroll" href="#about">about me</a>.</h3>
             <hr />
             <ul class="social">
                <li><a href="https://www.facebook.com/gerry.jekova" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -164,19 +94,18 @@
 
                   <h2>Contact Details</h2>
                   <p class="address">
-						   <span> -- </span><br>
-						   <span>
-						         ----
+						   <span> Dimitrovgrad </span><br>
+						   <span> Bulgaria
                      </span><br>
-						   <span> --- </span><br>
-                     <span> ---@outlook.com </span>
+						   <span> +359876911090 </span><br>
+                     <span> gerganazhekova@outlook.com</span>
 					   </p>
 
                </div>
 
                <div class="columns download">
                   <p>
-                     <a href="Gergana Minimalistic Resume 2023.pdf" target="_blank" class="button"><i class="fa fa-download"></i>Download Resume</a>
+                     <a href="Gergana Minimalistic Resume 2023.pdf" target="_blank" class="button"><i class="fa fa-download"></i>Get Resume</a>
                   </p>
                </div>
 
@@ -625,14 +554,12 @@
 
          <div class="two columns header-col">
 
-            <h1><span>Get Hosting.</span></h1>
-
          </div>
 
          <div class="seven columns">
 
             <h2><span class="lead">My Most Important Sources</span></h2>
-            <p><span class="lead">Links to most resources I use and stuff I care about.</span></p>
+            <p><span class="lead">Links to most resources I use and stuff I care about. You can find links to most of my remaining socials, resources I use on a daily basis and useful tools & websites I use for my daily stuff.</span></p>
             <button><a href="https://casualnerding.love" target="_blank">Here</a></button>
 
          </div>
@@ -657,7 +584,7 @@
 
             <div class="two columns header-col">
 
-               <h1><span>Client Testimonials</span></h1>
+               <h1><span>Words that stuck to me & their meaning</span></h1>
 
             </div>
 
@@ -713,15 +640,13 @@
 
             <div class="two columns header-col">
 
-               <h1><span>Get In Touch.</span></h1>
+               <h1><span>Leave me a Message!</span></h1>
 
             </div>
 
             <div class="ten columns">
 
-                  <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                  eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                  voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                  <p class="lead">The form below is made with formspree.io & integrated with Discord via Webhook + Discord API. 
                   </p>
 
             </div>
@@ -733,70 +658,109 @@
             <div class="eight columns">
 
                <!-- form -->
-               <form action="" method="post" id="contactForm" name="contactForm">
+               <form action="https://formspree.io/f/mnqkjrwa" method="POST" id="contactForm" name="contactForm">
 					<fieldset>
 
                   <div>
-						   <label for="contactName">Name <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactName" name="contactName">
+						   <label for="contactName">Name:<span class="required">*</span></label>
+						   <input type="text" value="" size="35" id="contactName" name="Name">
+                  </div> 
+
+                  <div>
+                     <label for="contactEmail">Email:<span class="required">*</span></label>
+                     <input type="email" id="contactEmail" name="Email"></textarea>
+                  </div>
+
+
+                  <div>
+                     <label for="contactMessage:">Message:<span class="required">*</span></label>
+                     <textarea cols="50" rows="15" id="contactMessage" name="Message"></textarea>
                   </div>
 
                   <div>
-						   <label for="contactEmail">Email <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
-                  </div>
-
-                  <div>
-						   <label for="contactSubject">Subject</label>
-						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
-                  </div>
-
-                  <div>
-                     <label for="contactMessage">Message <span class="required">*</span></label>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
-                  </div>
-
-                  <div>
-                     <button class="submit">Submit</button>
+                     <button class="formbutton">Submit</button>
                      <span id="image-loader">
                         <img alt="" src="images/loader.gif">
-                     </span>
-                  </div>
+                        <!-- Read the Formbutton docs at formspree.io/formbutton/docs. See more examples at codepen.io/formspree -->
 
-					</fieldset>
-				   </form> <!-- Form End -->
+                        <script src="https://formspree.io/js/formbutton-v1.min.js" defer></script>
+                        <script>
+                              /* paste this line in verbatim */
+                              window.formbutton=window.formbutton||function(){(formbutton.q=formbutton.q||[]).push(arguments)};
+                              /* customize formbutton below*/     
+                              formbutton("create", {
+                                 action: "https://formspree.io/f/mnqkjrwa",
+                                 title: "contactForm",
+                                 fields: [
+                                    { 
+                                       type: "textarea",
+                                       label: "contactName",
+                                       name: "contactName",
+                                       required: true,
+                                       placeholder: "What's your name?",
+                                    },
+                                    { 
+                                    type: "email", 
+                                    label: "contactEmail", 
+                                    name: "contactEmail",
+                                    required: true,
+                                    placeholder: "your@email.com"
+                                    },
+                                    {
+                                    type: "textarea",
+                                    label: "contactMessage",
+                                    name: "contactMessage",
+                                    required: true,
+                                    placeholder: "What's up?",
+                                    },
+                                    { type: "submit" }      
+                                 ],
+                                 styles: {
+                                    title: {
+                                    backgroundColor: "yellowgreen"
+                                    },
+                                    button: {
+                                    backgroundColor: "pink"
+                                    }
+                                 }
+                              });
+                              </script>
+                                                   </span>
+                                                </div>
+                                             </fieldset>
+                                             </form> <!-- Form End -->
 
-               <!-- contact-warning -->
-               <div id="message-warning"> Error boy</div>
-               <!-- contact-success -->
-				   <div id="message-success">
-                  <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-				   </div>
+                                             <!-- contact-warning -->
+                                             <div id="message-warning">Error boy</div>
+                                             <!-- contact-success -->
+                                             <div id="message-success">
+                                                <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+                                             </div>
 
-            </div>
+                                          </div>
 
 
-            <aside class="four columns footer-widgets">
+                                          <aside class="four columns footer-widgets">
 
-               <div class="widget widget_contact">
+                                             <div class="widget widget_contact">
 
-					   <h4>Address and Phone</h4>
-					   <p class="address">
-						   Jerry<br>
-						  ----<br>
-						   ----<br>
-						   <span>----</span>
-					   </p>
+                                                <h4>Address and Phone</h4>
+                                                <p class="address">
+                                                Gergana Zhekova<br>
+                                                Dimitrovgrad, <br>
+                                                Bulgaria<br>
+                                                <span>+359876911090</span>
+                                                </p>
 
-				   </div>
+                                             </div>
 
-               
-            
-            </aside>
+                                             
+                                          
+                                          </aside>
 
-      </div>
+                                    </div>
 
-   </section> 
+                                 </section> 
 
 
    <footer>

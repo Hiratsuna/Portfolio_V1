@@ -1,0 +1,14 @@
+{
+    "forms": {
+      "contact": {
+        "name": "contactForm",
+        "actions":[
+          {
+            "app": "discord",
+            "type": "sendMessage",
+            "webhookURL": "$https://discord.com/api/webhooks/1137035540982669384/TmTosityK1hGeymNlnNaggzlseEonfCjuem8zy9gPgfEGFDeZRVga7h77ITORdGYpnPZL"
+          }
+        ]
+      }
+    }
+  }
