@@ -201,6 +201,10 @@ ul#nav li a:hover { color: #7bff00 }
    background: #7bff00;
    color: #000000;
 }
+
+#about .download .button:active{
+   color:#0066ff
+}
 #about .download .button i {
    margin-right: 15px;
    font-size: 20px;
