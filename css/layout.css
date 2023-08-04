@@ -13,7 +13,7 @@ header {
 	-webkit-background-size: cover !important;
    -webkit-background: #161415 url(../images/header-background.jpg) no-repeat top center;
    text-align: center;
-   overflow: hidden;
+   overflow: none;
 }
 
 /* vertically center banner section */
