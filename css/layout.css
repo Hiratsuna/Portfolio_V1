@@ -144,7 +144,7 @@ ul#nav li a {
    line-height: 32px;
 	text-decoration: none;
    text-align: left;
-   color: #B799FF;
+   color: #ffcd71;
 
 	-webkit-transition: color .2s ease-in-out;
 	-moz-transition: color .2s ease-in-out;
@@ -155,7 +155,7 @@ ul#nav li a {
 
 ul#nav li a:active { background-color: transparent !important; }
 ul#nav li.current a { color: yellow; }
-ul#nav li a:hover { color: #7bff00 }
+ul#nav li a:hover { color: #cfffa1 }
 
 /* ------------------------------------------------------------------ */
 /* c. About Section
