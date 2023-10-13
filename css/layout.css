@@ -70,8 +70,8 @@ header .social li {
    margin: 0 15px;
    padding: 0;
 }
-header .social li a { color: #6f00ff; }
-header .social li a:hover { color: #00e1ff; }
+header .social li a { color: #fffb00; }
+header .social li a:hover { color: #ffae00; }
 
 /* scrolldown link */
 header .scrolldown a {
